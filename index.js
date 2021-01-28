@@ -1,17 +1,17 @@
-/* Array Method */
-// stack
-var stack = []
+// /* Array Method */
+// // stack
+// var stack = []
 
-// push
-stack.push("cat")
-stack.push("dog")
-stack.push("fish")
+// // push
+// stack.push("cat")
+// stack.push("dog")
+// stack.push("fish")
 
-// pop
-stack.pop()
+// // pop
+// stack.pop()
 
-// peek
-stack[stack.length - 1]
+// // peek
+// stack[stack.length - 1]
 
 /* Class Method */
 // stack
@@ -23,12 +23,12 @@ class Stack {
 
   // push
   push(element) {
-    this.size++
     this.storage[this.size] = element
+    this.size++
   }
 
   // pop
-  pop(element) {
+  pop() {
     let removed = this.storage[this.size]
     delete this.storage[this.size]
     this.size --
@@ -40,6 +40,16 @@ class Stack {
     return this.storage[this.size]
 
   }
+
+  // isEmpty & size
+  isEmpty() {
+    if(this.size === 0){
+      return `Stack is empty`
+    } else {
+      return `Stack has ${this.size} elements`
+    }
+  }
+
 }
 
 const stack = new Stack()
@@ -47,3 +57,7 @@ const stack = new Stack()
 stack.push("cat")
 stack.push("dog")
 stack.push("fish")
+
+stack.pop()
+
+stack.isEmpty()
